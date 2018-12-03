@@ -1,0 +1,46 @@
+<!--форма добавления-->
+<div class="modal fade" id="modal_add" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog  modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Добавить пользователя</h5>
+
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <fieldset class="form-group">
+                    <form id="form_add" name="form_add" enctype="multipart/form-data" action="add" method="post">
+                        <input name="id" value="" required="required" type="hidden">
+                        <div class='form-section'>
+                            <input class="form-control" name="login" required="required" type="text" placeholder="Логин" pattern="[a-zA-Zа-яА-Я0-9\s]{3,50}"
+                                title="Буквы или цифры от 3 до 50 символов>">
+                        </div>
+                        <div class='form-section'>
+                            <input class="form-control" name="name" required="required" type="text" placeholder="ФИО" pattern="[a-zA-Zа-яА-Я0-9\s]{3,200}"
+                                title="Буквы или цифры от 3 до 200 символов">
+                        </div>
+                        <div class='form-section'>
+                            <input class="form-control" name="role" required="required" type="text" placeholder="Должность    &#10507;" pattern="[a-zA-Zа-яА-Я0-9\s]{3,200}"
+                                title="Буквы или цифры от 3 до 200 символов" value="">
+                        </div>
+                        <div class='form-section'>
+                            <input id="password" class="form-control" name="password" required="required" type="password" placeholder="Пароль" minlength="8"
+                                autocomplete="current-password">
+                        </div>
+                        <div class='form-section'>
+                            <input id="confirm_password" class="form-control" name="confirm_password" required="required" type="password" placeholder="Подтвердите пароль"
+                                minlength="8">
+                        </div>
+                        <div class='form-section'>
+                            <label>Доступ:
+                                <input name="access" value="0" type="hidden">
+                                <input name="access" type="checkbox" value="1" checked>
+                            </label>
+                        </div>
+                        <button type="submit" name="submit" class="btn-primary">Сохранить</button>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>

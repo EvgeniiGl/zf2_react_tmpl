@@ -1,0 +1,51 @@
+<?php
+//$this->headScript()
+//        ->appendFile($this->basePath('js/users/users.js'));
+echo $this->form_add;
+echo $this->form_del;
+echo $this->form_search;
+?>
+
+<section class="users">
+
+
+    <table id="table_users" class="table table-bordred table-hover paginated">
+        <thead>
+            <tr class="bg-info text-light">
+                <th>Логин</th>
+                <th>ФИО</th>
+                <th>Должность</th>
+                <th>Доступ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            foreach ($this->users as $user):
+                ?>
+            <tr data-id='<?php echo $user->id ?>'>
+                <td class='td-login'>
+                    <?php echo $user->login ?>
+                </td>
+                <td class='td-name'>
+                    <?php echo $user->name ?>
+                </td>
+                <td class='td-role'>
+                    <?php echo $user->role ?>
+                </td>
+                <td class='td-access'>
+                    <?php
+                        if ($user->access) {
+                            echo "<button data-id = '$user->id' data-access='1' class='btn-xs btn-access btn-success glyphicon glyphicon-plus-sign has-spinner'>включен</button>";
+                        } else {
+                            echo "<button data-id = '$user->id'  data-access='0' class='btn-xs btn-access btn-danger glyphicon glyphicon-minus-sign has-spinner'>отключен</button>";
+                        }
+                    endforeach;
+                    ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<?php
+echo $this->buttons_actions;
+echo $this->paginator;
